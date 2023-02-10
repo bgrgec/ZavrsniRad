@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Post
 # Create your views here.
 def index(request):
-    postList = Post.objects.all()[:3]
+    postList = Post.objects.all()
     context = {
         'postData':postList,
     }

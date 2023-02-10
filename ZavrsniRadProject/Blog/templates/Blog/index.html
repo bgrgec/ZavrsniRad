@@ -13,21 +13,25 @@
     </div>
     </header>
 
-      <div class="container-fluid">
+      <div class="container-fluid sliderContainer">
         <div class="row">
           <div class="col-md-12">
             <div class="slider">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
           <div class="carousel-inner">
-            {% for post in postData %}
-            <div class="carousel-item active">
-              <img src="{{ post.featuredImage }}" class="d-block w-100" alt="...">
-              <div class="carousel-caption">
-                <h5 class="postTitle">{{post.postName}}</h5>
-                <a href="post/{{ post.id}}/">Pročitaj</a>
-              </div>
-            </div>
-            {% endfor %}
+
+    {% for post in postData|slice:":3" %}
+
+    <div class="carousel-item active">
+      <img src="{{ post.featuredImage }}" class="d-block w-100" alt="...">
+      <div class="carousel-caption">
+        <h5 class="postTitle">{{post.postName}}</h5>
+        <a href="post/{{ post.id}}/">Pročitaj</a>
+      </div>
+    </div>
+    {% endfor %}
+
+          
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -41,4 +45,45 @@
         </div>
       </div>
 
+      <div class="container-fluid py-5">
+        <div class="row">
+          <div class="col-md-12 pb-3 mb-4">
+            <div class="container">
+              <h2 class="postTitle">Najnovije objave</h2>
+            <br>
+            <div class="row row-cols-1 row-cols-md-4 g-4 h-100">
+
+                {% for post in postData|slice:":8" %}
+
+                <div class="col h-100">
+                  <div class="card h-100">
+                    <a class="text-decoration-none" href="/post/{{post.id}}/">
+                      <img src="{{post.featuredImage}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{post.postName}}</h5>
+                      <p class="card-text">{{post.postContent|slice:":100"}}</p>
+                    </div>
+                    <div class="card-footer">
+                      <b class="mt-auto align-self-start">Pročitaj >></b>
+                    </div>
+                    </a>
+                  </div>
+                </div>
+                {% endfor %}
+
+
+                
+
+              </div>
+      
+            </div>
+      
+          </div>
+      
+        </div>
+      </div>
+
+</div></div>
+
+      
   {% endblock %}
