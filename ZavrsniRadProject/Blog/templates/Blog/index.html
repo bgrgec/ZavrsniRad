@@ -2,17 +2,6 @@
 
   {% block content %}
 
-
-  <div class="container py-4">
-    <header class="pb-3 mb-4">
-      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-        <span class="fs-4">
-          {% load static %}
-<img src="{% static 'Blog/images/logo.png' %}" height="70px">
-      </a>
-    </div>
-    </header>
-
       <div class="container-fluid sliderContainer">
         <div class="row">
           <div class="col-md-12">
@@ -22,7 +11,7 @@
 
     {% for post in postData|slice:":3" %}
 
-    <div class="carousel-item active">
+    <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}" data-interval="100">
       <img src="{{ post.featuredImage }}" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5 class="postTitle">{{post.postName}}</h5>
@@ -51,20 +40,22 @@
             <div class="container">
               <h2 class="postTitle">Najnovije objave</h2>
             <br>
-            <div class="row row-cols-1 row-cols-md-4 g-4 h-100">
+            <div class="row row-cols-1 row-cols-md-3 g-4 h-100">
 
-                {% for post in postData|slice:":8" %}
+                {% for post in postData|slice:":9" %}
 
-                <div class="col h-100">
-                  <div class="card h-100">
+                <div class="col">
+                  <div class="card">
                     <a class="text-decoration-none" href="/post/{{post.id}}/">
                       <img src="{{post.featuredImage}}" class="card-img-top" alt="...">
+                      <!--<div class="categoryOverImage position-absolute badge bg-dark p-2 m-2">{{post.category}}</div>-->
                     <div class="card-body">
+                      <div class="categoryName"><b>{{post.category}}</b><br>{{post.author}} | {{post.datePublished}}
+                      </div>
+                      <br>
                       <h5 class="card-title">{{post.postName}}</h5>
-                      <p class="card-text">{{post.postContent|slice:":100"}}</p>
-                    </div>
-                    <div class="card-footer">
-                      <b class="mt-auto align-self-start">Pročitaj >></b>
+                      <br>
+                      <p class="card-text">{{post.postContent|slice:":80"}}...</p>
                     </div>
                     </a>
                   </div>

@@ -52,7 +52,7 @@
 }
 
 .card-title{
-  font-size: 1.8em;
+  font-size: 1.7em;
   font-weight: 100;
 }
 
@@ -60,14 +60,15 @@
   font-weight: 300;
 }
 
-
-.card-body{
-  height: 175px !important;
+.card>a>img{
+  height: 250px;
+  width:100%;
 }
 
-
-.card-footer{
-  background: inherit;
-  border: none !important;
-  padding-bottom: 20px;
+.categoryName{
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
 }

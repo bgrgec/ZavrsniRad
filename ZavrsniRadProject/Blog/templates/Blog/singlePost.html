@@ -1,31 +1,9 @@
-{% if postData %}
+{% extends 'Blog/header.html' %}
 
-<html lang="hr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
-    <title>{{ postData.postName }} - /slash</title>
-    <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.css" rel="stylesheet">
-  </head>
+  {% block content %}
 
-  <body>  
-
-    
-<main>
-    <div class="rounded-3">
-        <div class="container-fluid py-5 heroImage aligns-items-center">
-              <div class="container ">
-    <header class="pb-3 mb-4 border-bottom">
-      <a href="/" class="d-flex align-items-center text-light text-decoration-none">
-        {% load static %}
-        <img src="{% static 'Blog/images/logo.png' %}" height="70px">
-            </a>
-    </header>
-    </div>
-            <br>
+  {% if postData %}
+  <br>
             <br>
             <br>
             <br>
@@ -37,33 +15,32 @@
                 <br>
                 <p class="text-center">{{postData.author}} | {{postData.datePublished}}</p>
                 <br>
-                <br>
             </div>
         </div>
-        <div class="container py-5">
-          <img src="/{{ postData.featuredImage }}" alt="Post Image" >
-        <p class="content">
+        <div class="container">
+          <div class="featured text-center">
+          <img src="/{{ postData.featuredImage }}" alt="Post Image" width="50%">
+          </div>
+          <br>
+        <p class="content py-5">
           {{postData.postContent |safe}}
         </p>
       </div>
     </div>
   </div>
-</main>
+  {% load static %}
 
+  <style>
+  .bg-overlay {
+      background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)), url('/{{postData.featuredImage}}');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      color: #fff;
+      height: 450px;
+      padding-top: 50px;
+  }
+  </style>
+  {% endif%}
 
-{% load static %}
-
-<style>
-.bg-overlay {
-    background: linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)), url('/{{postData.featuredImage}}');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: #fff;
-    height: 450px;
-    padding-top: 50px;
-}
-</style>
-{% endif%}
-
-</body></html>
+  {% endblock %}
