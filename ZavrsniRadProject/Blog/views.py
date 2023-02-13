@@ -16,3 +16,7 @@ def singlePost(request, postID):
     }
     
     return render(request, 'Blog/singlePost.html', context=context)
+
+def about(request):
+    context={}
+    return(render(request, 'Blog/about.html', context=context))
