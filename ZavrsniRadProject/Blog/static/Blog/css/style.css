@@ -11,6 +11,11 @@
   padding-right: 50px !important;
 }
 
+.contactText{
+  padding-right: 80px !important;
+  text-align: justify;
+}
+
 .sliderContainer{
     margin: 0px !important;
     padding: 0px !important;
@@ -52,6 +57,14 @@
   .postTitle{
     font-size: 3rem !important;
     font-weight: 100 !important;
+    color: #2D2D2D;
+    text-decoration: none !important;
+  }
+
+  .carousel-caption>.postTitle{
+    ont-size: 3rem !important;
+    font-weight: 100 !important;
+    color: white !important;
   }
 
 
