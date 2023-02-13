@@ -1,6 +1,16 @@
-*{
-  background: red !important;
+.nav-item>a{
+  color: #2D2D2D !important;
+  text-transform: uppercase;
 }
+
+.nav-item>a:hover{
+  border-bottom: 1px solid #2D2D2D;
+}
+
+.nav-item{
+  padding-right: 50px !important;
+}
+
 .sliderContainer{
     margin: 0px !important;
     padding: 0px !important;
