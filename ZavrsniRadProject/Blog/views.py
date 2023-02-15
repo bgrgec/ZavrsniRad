@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 # Create your views here.
+
 def index(request):
     postList = Post.objects.all().order_by('-id')
     context = {
@@ -8,6 +9,15 @@ def index(request):
     }
     
     return render(request, 'Blog/index.html', context=context)
+
+
+def posts(request):
+    postList = Post.objects.all().order_by('-id')
+    context = {
+        'postData':postList,
+    }   
+    return(render(request, 'Blog/posts.html', context=context))
+
 
 def singlePost(request, postID):
     postList = Post.objects.get(pk=postID)
@@ -17,13 +27,6 @@ def singlePost(request, postID):
     
     return render(request, 'Blog/singlePost.html', context=context)
 
-
-def posts(request):
-    postList = Post.objects.all().order_by('-id')
-    context = {
-        'postData':postList,
-    }   
-    return(render(request, 'Blog/posts.html', context=context))
 
 def about(request):
     context={}

@@ -1,5 +1,7 @@
 {% extends 'Blog/header.html' %}
 
+{% block title %} {{ postData.postName }} {% endblock %}
+
   {% block content %}
 
   {% if postData %}

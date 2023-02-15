@@ -19,7 +19,7 @@ class Category(models.Model):
 
 class Post(models.Model):
     postName = models.CharField(max_length=120, default='')
-    featuredImage = models.ImageField(upload_to='static/', default='')
+    featuredImage = models.ImageField(upload_to='media/', default='')
     postContent = models.TextField(default='')
     datePublished = models.DateField(default=datetime.date.today())
     published = models.BooleanField(default=False)
