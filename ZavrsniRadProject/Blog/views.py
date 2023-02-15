@@ -3,7 +3,7 @@ from .models import Post
 # Create your views here.
 
 def index(request):
-    postList = Post.objects.all().order_by('-id')
+    postList = Post.objects.filter(published=True).order_by('-id')
     context = {
         'postData':postList,
     }
@@ -12,7 +12,7 @@ def index(request):
 
 
 def posts(request):
-    postList = Post.objects.all().order_by('-id')
+    postList = Post.objects.filter(published=True).order_by('-id')
     context = {
         'postData':postList,
     }   
