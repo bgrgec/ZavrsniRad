@@ -6,14 +6,14 @@
   <div class="container">
     <div class="row">
         <div class="col-md-12 py-5">
-            <h1 class="text-center">Objave</h1>
+            <h1 class="text-center">Posts</h1>
             <br>
         </div>
     </div>
     {% for post in postData %}
 
     <div class="row py-3">
-            <div class="col-md-3"><img src="/{{ post.featuredImage }}" width="100%"></div>
+            <div class="col-md-3"><img src="/media/{{ post.featuredImage }}" width="100%"></div>
             <div class="col-md-9">
               <b class="categoryName">{{post.category}}</b>
                 <a class="postTitle" href="/post/{{ post.id}}/"><h5 class="postTitle">{{post.postName}}</h5></a><br>

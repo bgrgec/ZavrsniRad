@@ -1,11 +1,11 @@
-<html lang="en"><head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <title>/slash - {% block title %} {% endblock %}</title>
     <link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.css" rel="stylesheet">
     {% load static %}
-
     <link href="{% static 'Blog/css/style.css' %}" rel="stylesheet">
   </head>
 
@@ -23,16 +23,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Početna</a>
+                <a class="nav-link active" aria-current="page" href="/">Homepage</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/posts/">Objave</a>
+                <a class="nav-link" href="/posts/">Posts</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/about/">O meni</a>
+                <a class="nav-link" href="/about/">About me</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/contact/">Kontakt</a>
+                <a class="nav-link" href="/contact/">Contact</a>
               </li>
             </ul>
           
@@ -56,9 +56,6 @@
     <div class="row">
       <div class="col-8">
         <img src="{% static 'Blog/images/logo.png' %}" height="100px">
-        <!--<ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">info@slash.blog</a></li>
-        </ul>-->
       </div>
 
       <div class="col-4">
